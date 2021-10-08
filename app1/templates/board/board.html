@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog List</title>
+</head>
+<body>
+    <h1> 게시판 페이지입니다.</h1>
+    <!-- 게시판의 게시글을 하나씩 보여줌-->
+    <table>
+        {% for list in postlist %}
+            <ul>
+<!--                <li>{{list.postname}}</li>-->
+<!--                <li>{{list.contents}}</li>-->
+                <li><a href ='{{list.pk}}'>{{list.postname}}</a></li>
+            </ul>
+        {% endfor %}
+    </table>
+</body>
+</html>
