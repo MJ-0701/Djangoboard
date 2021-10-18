@@ -8,5 +8,6 @@ urlpatterns = [
     path('user/', views.user, name='user'),
     path('board/',  views.board, name='board'),
     path('board/<int:pk>', views.posting, name='posting'),
+    path('board/write/', views.write_posting, name='write'),
 
 ]

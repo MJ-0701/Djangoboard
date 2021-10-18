@@ -2,8 +2,6 @@ from django.db import models
 
 
 # Create your models here.
-# 게시글(POST) & 제목(postname), 내용(content)
-
 class Post(models.Model):
     postname = models.CharField(max_length=50)
     contents = models.TextField()

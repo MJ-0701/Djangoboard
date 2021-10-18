@@ -1,5 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
 # View에 Model(Post 게시글) 가져오기
+
+
 from .models import Post
 
 
@@ -33,3 +36,14 @@ def posting(request, pk):
     # pk를 이용하여 하나의 게시글을 검색.
     post = Post.objects.get(pk=pk)
     return render(request, 'board/posting.html', {'post': post})
+
+
+def write_posting(request):
+    if request.method == 'POST':
+        new_text = Post.objects.create(
+            postname=request.POST['postname'],
+            contents=request.POST['contents'],
+        )
+        return redirect('/board')
+
+    return render(request, 'board/write_posting.html')
